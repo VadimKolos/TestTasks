@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="BrowserType" value="Chrome" />
+		<Parameter name="TimeoutSeconds" value="5" />
+		<Parameter name="BaseUrl" value="https://cdpn.io/benabbottnz/fullpage/kGxQGG" />
+	</TestRunParameters>
+</RunSettings>
