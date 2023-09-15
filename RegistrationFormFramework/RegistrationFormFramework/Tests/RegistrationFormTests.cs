@@ -9,14 +9,17 @@ namespace RegistrationFormFramework.Tests
         [TestCase(4, "123", "123", "male", "Europe", "User info")]
         [TestCase(100, "123", "123", "male", "Europe", "User info")]
         public void CheckLoginTest(int usernameLength, string password, string confirmPassword, string gender, string continent, string userInfo)
-        {            
+        {
             string username = StringGenerator.GenerateRandomStringWithSpecialChar(usernameLength);
 
-            RegistrationPage registrationPage = new RegistrationPage(driver);
-            Assert.IsTrue(registrationPage.RegisterAnAccountTitlePresent);
-            Assert.IsTrue(registrationPage.DropdownExistsAllContinents());
+            var registrationPage = new RegistrationPage(driver);
+            Assert.Multiple(() =>
+            {
+                Assert.IsTrue(registrationPage.RegisterAnAccountTitlePresent);
+                Assert.IsTrue(registrationPage.DropdownExistsAllContinents());
+            });
             registrationPage.FillUserData(username, password, confirmPassword, gender, continent, userInfo);
-
+            
             Assert.IsTrue(registrationPage.RegisterAnAccountTitleNotPresent);
         }
 
@@ -29,7 +32,7 @@ namespace RegistrationFormFramework.Tests
         [TestCase("user", "123", "123", "", "Europe", "User info", "* Please choose your gender")]
         public void CheckRegistrationWithEmptyFieldsTest(string username, string password, string confirmPassword, string gender, string continent, string userInfo, string errorMessage)
         {
-            RegistrationPage registrationPage = new RegistrationPage(driver);
+            var registrationPage = new RegistrationPage(driver);
             registrationPage.FillUserData(username, password, confirmPassword, gender, continent, userInfo);
             Assert.IsTrue(registrationPage.ErrorMessageIsDisplayed(errorMessage));
         }
