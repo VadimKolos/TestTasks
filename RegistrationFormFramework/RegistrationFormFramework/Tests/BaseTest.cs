@@ -7,7 +7,7 @@ namespace RegistrationFormFramework.Tests
     [TestFixture]
     public class BaseTest
     {
-        protected IWebDriver driver = null;        
+        protected IWebDriver driver;        
 
         [SetUp]
         public virtual void TestSetUp()

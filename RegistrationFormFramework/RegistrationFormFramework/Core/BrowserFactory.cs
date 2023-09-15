@@ -5,9 +5,9 @@ using OpenQA.Selenium.IE;
 
 namespace RegistrationFormFramework.Core
 {
-    public class BrowserFactory
+    public static class BrowserFactory
     {
-        protected static IWebDriver driver = null;
+        private static IWebDriver driver;
 
         public static IWebDriver GetDriver(string browserType)
         {

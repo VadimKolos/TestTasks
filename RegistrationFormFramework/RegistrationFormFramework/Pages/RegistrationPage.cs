@@ -24,7 +24,7 @@ namespace RegistrationFormFramework.Pages
 
         public void ChooseLocation(string continenet)
         {
-            SelectElement selectContinent = new SelectElement(YourContinentDropdown);
+            var selectContinent = new SelectElement(YourContinentDropdown);
             selectContinent.SelectByText(continenet);
         }
 
@@ -32,7 +32,7 @@ namespace RegistrationFormFramework.Pages
         {
             List<string> continents = new List<string> { "Choose Your Continent", "Africa", "North America", "South America", "Antarctica", "Asia", "Australia", "Europe" };
 
-            SelectElement selectContinent = new SelectElement(YourContinentDropdown);            
+            var selectContinent = new SelectElement(YourContinentDropdown);            
             
             List<string> actualContinents = new List<string>();
             foreach (IWebElement option in selectContinent.Options)

@@ -4,7 +4,7 @@ namespace RegistrationFormFramework.Pages
 {
     public class BasePage
     {
-        protected IWebDriver driver = null;
+        protected IWebDriver driver;
 
         public BasePage(IWebDriver driver)
         {
